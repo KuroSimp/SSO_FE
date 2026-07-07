@@ -1,5 +1,5 @@
 import { FormEvent, useState } from 'react';
-import { Eye, EyeOff, Lock, Mail } from 'lucide-react';
+import { ArrowRight, Eye, EyeOff, Lock, Mail } from 'lucide-react';
 import type { SignInCredentials } from '@sso/auth-domain';
 import { useToggle } from '@sso/shared-hooks';
 import { isValidEmail, requiredMessage } from '@sso/shared-utils';
@@ -57,7 +57,7 @@ export function LoginForm({ state, onSubmit }: LoginFormProps) {
   }
 
   return (
-    <form className="space-y-6" onSubmit={(event) => void handleSubmit(event)} noValidate>
+    <form className="space-y-5" onSubmit={(event) => void handleSubmit(event)} noValidate>
       {state.status === 'error' ? <Alert>{state.message}</Alert> : null}
 
       <div className="space-y-2">
@@ -65,6 +65,7 @@ export function LoginForm({ state, onSubmit }: LoginFormProps) {
           Email address
         </label>
         <Input
+          className="h-[50px] rounded-xl border-slate-200 pl-12 text-base shadow-none"
           id="email"
           name="email"
           type="email"
@@ -73,7 +74,7 @@ export function LoginForm({ state, onSubmit }: LoginFormProps) {
           hasError={Boolean(errors.email)}
           aria-invalid={Boolean(errors.email)}
           aria-describedby={errors.email ? 'email-error' : undefined}
-          leftIcon={<Mail className="h-4 w-4" aria-hidden="true" />}
+          leftIcon={<Mail className="h-5 w-5" aria-hidden="true" />}
         />
         {errors.email ? (
           <p className="text-sm text-red-600" id="email-error">
@@ -83,15 +84,11 @@ export function LoginForm({ state, onSubmit }: LoginFormProps) {
       </div>
 
       <div className="space-y-2">
-        <div className="flex items-center justify-between gap-4">
-          <label className="text-sm font-semibold text-slate-700" htmlFor="password">
-            Password
-          </label>
-          <a className="text-sm font-semibold text-blue-600 hover:text-blue-700" href="/forgot-password">
-            Forgot password?
-          </a>
-        </div>
+        <label className="text-sm font-semibold text-slate-700" htmlFor="password">
+          Password
+        </label>
         <Input
+          className="h-[50px] rounded-xl border-slate-200 pl-12 text-base shadow-none"
           id="password"
           name="password"
           type={showPassword ? 'text' : 'password'}
@@ -99,7 +96,7 @@ export function LoginForm({ state, onSubmit }: LoginFormProps) {
           hasError={Boolean(errors.password)}
           aria-invalid={Boolean(errors.password)}
           aria-describedby={errors.password ? 'password-error' : undefined}
-          leftIcon={<Lock className="h-4 w-4" aria-hidden="true" />}
+          leftIcon={<Lock className="h-5 w-5" aria-hidden="true" />}
           rightElement={
             <button
               type="button"
@@ -118,12 +115,29 @@ export function LoginForm({ state, onSubmit }: LoginFormProps) {
         ) : null}
       </div>
 
+      <div className="flex items-center justify-between gap-4">
+        <label className="inline-flex items-center gap-2 text-sm font-medium text-slate-500" htmlFor="remember">
+          <input
+            id="remember"
+            name="remember"
+            type="checkbox"
+            defaultChecked
+            className="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+          />
+          Remember me
+        </label>
+        <a className="text-sm font-semibold text-blue-600 hover:text-blue-700" href="/forgot-password">
+          Forgot password?
+        </a>
+      </div>
+
       <Button
-        className="mt-1 h-[52px] w-full rounded-xl text-base shadow-lg shadow-blue-600/20"
+        className="mt-2 h-[54px] w-full rounded-xl bg-[#039bf4] text-base shadow-[0_12px_24px_rgba(3,155,244,0.25)] hover:bg-[#028ce0]"
         type="submit"
         isLoading={isSubmitting}
       >
-        {isSubmitting ? 'Signing in...' : 'Sign in'}
+        <span>{isSubmitting ? 'Signing in...' : 'Sign in'}</span>
+        {!isSubmitting ? <ArrowRight className="h-5 w-5" aria-hidden="true" /> : null}
       </Button>
     </form>
   );
