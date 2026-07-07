@@ -1,9 +1,0 @@
-export function AuthDivider() {
-  return (
-    <div className="flex items-center gap-3 py-2">
-      <div className="h-px flex-1 bg-slate-200" />
-      <span className="text-xs font-semibold tracking-[0.18em] text-slate-400">OR CONTINUE WITH</span>
-      <div className="h-px flex-1 bg-slate-200" />
-    </div>
-  );
-}

@@ -80,7 +80,7 @@ npm run lint
 
 ## Supabase
 
-Enable email/password auth in Supabase Auth. For Google and GitHub OAuth, configure the provider credentials in Supabase Dashboard and add redirect URL:
+Enable email/password auth in Supabase Auth and add this redirect URL:
 
 ```text
 http://localhost:4200/dashboard

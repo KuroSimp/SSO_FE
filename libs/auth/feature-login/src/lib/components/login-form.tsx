@@ -57,7 +57,7 @@ export function LoginForm({ state, onSubmit }: LoginFormProps) {
   }
 
   return (
-    <form className="space-y-5" onSubmit={(event) => void handleSubmit(event)} noValidate>
+    <form className="space-y-6" onSubmit={(event) => void handleSubmit(event)} noValidate>
       {state.status === 'error' ? <Alert>{state.message}</Alert> : null}
 
       <div className="space-y-2">
@@ -69,7 +69,7 @@ export function LoginForm({ state, onSubmit }: LoginFormProps) {
           name="email"
           type="email"
           autoComplete="email"
-          placeholder="name@company.com"
+          placeholder="you@example.com"
           hasError={Boolean(errors.email)}
           aria-invalid={Boolean(errors.email)}
           aria-describedby={errors.email ? 'email-error' : undefined}
@@ -118,7 +118,11 @@ export function LoginForm({ state, onSubmit }: LoginFormProps) {
         ) : null}
       </div>
 
-      <Button className="w-full" type="submit" isLoading={isSubmitting}>
+      <Button
+        className="mt-1 h-[52px] w-full rounded-xl text-base shadow-lg shadow-blue-600/20"
+        type="submit"
+        isLoading={isSubmitting}
+      >
         {isSubmitting ? 'Signing in...' : 'Sign in'}
       </Button>
     </form>

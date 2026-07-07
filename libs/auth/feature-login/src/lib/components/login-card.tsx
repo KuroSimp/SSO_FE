@@ -1,6 +1,4 @@
-import { AuthDivider } from './auth-divider';
 import { LoginForm } from './login-form';
-import { SocialLogin } from './social-login';
 import type { LoginState, useLogin } from '../hooks/use-login';
 
 interface LoginCardProps {
@@ -10,16 +8,14 @@ interface LoginCardProps {
 
 export function LoginCard({ state, actions }: LoginCardProps) {
   return (
-    <div className="rounded-[20px] border border-slate-200 bg-white p-6 shadow-soft sm:p-8">
-      <div className="mb-7 space-y-2 text-center">
-        <h1 className="text-2xl font-bold text-slate-950">Welcome back</h1>
-        <p className="text-sm leading-6 text-slate-500">Sign in to continue to your workspace</p>
+    <div className="rounded-[28px] border border-white/80 bg-white/95 p-6 shadow-soft backdrop-blur sm:p-10">
+      <div className="mb-8 space-y-3">
+        <h1 className="text-4xl font-bold leading-tight text-slate-950">Welcome Back</h1>
+        <p className="max-w-[340px] text-base leading-7 text-slate-500">
+          Glad to see you again! Please sign in to continue.
+        </p>
       </div>
       <LoginForm state={state} onSubmit={actions.submit} />
-      <div className="my-5">
-        <AuthDivider />
-      </div>
-      <SocialLogin state={state} onProvider={actions.submitProvider} />
     </div>
   );
 }

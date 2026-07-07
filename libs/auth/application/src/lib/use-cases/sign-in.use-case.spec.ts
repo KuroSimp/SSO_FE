@@ -1,4 +1,4 @@
-import type { AuthRepository, AuthStateListener, AuthSubscription, AuthUser, SignInCredentials, AuthProvider } from '@sso/auth-domain';
+import type { AuthRepository, AuthStateListener, AuthSubscription, AuthUser, SignInCredentials } from '@sso/auth-domain';
 import { describe, expect, it } from 'vitest';
 import { SignInUseCase } from './sign-in.use-case';
 
@@ -15,11 +15,6 @@ class FakeAuthRepository implements AuthRepository {
   signInWithPassword(credentials: SignInCredentials): Promise<AuthUser> {
     this.receivedCredentials = credentials;
     return Promise.resolve(this.user);
-  }
-
-  signInWithProvider(provider: AuthProvider): Promise<void> {
-    void provider;
-    return Promise.resolve();
   }
 
   signOut(): Promise<void> {

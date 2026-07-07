@@ -1,6 +1,5 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
 import type {
-  AuthProvider,
   AuthRepository,
   AuthStateListener,
   AuthSubscription,
@@ -24,19 +23,6 @@ export class SupabaseAuthRepository implements AuthRepository {
     }
 
     return SupabaseAuthMapper.toDomainUser(data.user);
-  }
-
-  async signInWithProvider(provider: AuthProvider): Promise<void> {
-    const { error } = await this.supabase.auth.signInWithOAuth({
-      provider,
-      options: {
-        redirectTo: `${window.location.origin}/dashboard`
-      }
-    });
-
-    if (error) {
-      throw SupabaseAuthErrorMapper.toDomainError(error);
-    }
   }
 
   async signOut(): Promise<void> {
