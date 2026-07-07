@@ -86,7 +86,13 @@ Enable email/password auth in Supabase Auth. For Google and GitHub OAuth, config
 http://localhost:4200/dashboard
 ```
 
-Apply `supabase/migrations/001_profiles.sql` if you create the `profiles` table. RLS limits reads and updates to `auth.uid() = id`.
+Database migrations live in the backend repository:
+
+```text
+../SSO_BE/supabase/migrations
+```
+
+Apply `../SSO_BE/supabase/migrations/001_profiles.sql` if you create the `profiles` table. RLS limits reads and updates to `auth.uid() = id`.
 
 ## Replace Supabase Auth
 
