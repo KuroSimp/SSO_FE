@@ -1,0 +1,1 @@
+{"name":"auth-domain","sourceRoot":"libs/auth/domain/src","projectType":"library","tags":["scope:auth","type:domain"],"targets":{"test":{"executor":"nx:run-commands","options":{"command":"vitest run libs/auth/domain --passWithNoTests"}},"lint":{"executor":"@nx/eslint:lint","options":{"lintFilePatterns":["libs/auth/domain/**/*.{ts,tsx}"]}}}}

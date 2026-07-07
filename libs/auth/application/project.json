@@ -1,0 +1,1 @@
+{"name":"auth-application","sourceRoot":"libs/auth/application/src","projectType":"library","tags":["scope:auth","type:application"],"targets":{"test":{"executor":"nx:run-commands","options":{"command":"vitest run libs/auth/application --passWithNoTests"}},"lint":{"executor":"@nx/eslint:lint","options":{"lintFilePatterns":["libs/auth/application/**/*.{ts,tsx}"]}}}}

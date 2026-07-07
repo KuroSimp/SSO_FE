@@ -1,0 +1,1 @@
+{"name":"core-routing","sourceRoot":"libs/core/routing/src","projectType":"library","tags":["scope:core","type:feature"],"targets":{"lint":{"executor":"@nx/eslint:lint","options":{"lintFilePatterns":["libs/core/routing/**/*.{ts,tsx}"]}}}}

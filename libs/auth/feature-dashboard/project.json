@@ -1,0 +1,1 @@
+{"name":"auth-feature-dashboard","sourceRoot":"libs/auth/feature-dashboard/src","projectType":"library","tags":["scope:auth","type:feature"],"targets":{"lint":{"executor":"@nx/eslint:lint","options":{"lintFilePatterns":["libs/auth/feature-dashboard/**/*.{ts,tsx}"]}}}}

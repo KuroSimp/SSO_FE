@@ -1,0 +1,1 @@
+{"name":"shared-utils","sourceRoot":"libs/shared/utils/src","projectType":"library","tags":["scope:shared","type:util"],"targets":{"test":{"executor":"nx:run-commands","options":{"command":"vitest run libs/shared/utils --passWithNoTests"}},"lint":{"executor":"@nx/eslint:lint","options":{"lintFilePatterns":["libs/shared/utils/**/*.{ts,tsx}"]}}}}

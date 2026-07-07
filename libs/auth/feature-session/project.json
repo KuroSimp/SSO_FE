@@ -1,0 +1,1 @@
+{"name":"auth-feature-session","sourceRoot":"libs/auth/feature-session/src","projectType":"library","tags":["scope:auth","type:feature"],"targets":{"lint":{"executor":"@nx/eslint:lint","options":{"lintFilePatterns":["libs/auth/feature-session/**/*.{ts,tsx}"]}}}}

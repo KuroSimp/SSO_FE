@@ -1,0 +1,32 @@
+{
+  "name": "identity-web",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/identity-web/src",
+  "projectType": "application",
+  "tags": ["scope:app", "type:app"],
+  "targets": {
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "options": {
+        "buildTarget": "identity-web:build",
+        "host": "127.0.0.1",
+        "port": 4200
+      }
+    },
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "configFile": "apps/identity-web/vite.config.ts",
+        "outputPath": "dist/apps/identity-web",
+        "tsConfig": "apps/identity-web/tsconfig.app.json"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": ["apps/identity-web/**/*.{ts,tsx}"]
+      }
+    }
+  }
+}

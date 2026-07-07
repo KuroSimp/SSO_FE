@@ -1,0 +1,1 @@
+{"name":"auth-feature-login","sourceRoot":"libs/auth/feature-login/src","projectType":"library","tags":["scope:auth","type:feature"],"targets":{"lint":{"executor":"@nx/eslint:lint","options":{"lintFilePatterns":["libs/auth/feature-login/**/*.{ts,tsx}"]}}}}

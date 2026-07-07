@@ -1,0 +1,1 @@
+{"name":"auth-feature-forgot-password","sourceRoot":"libs/auth/feature-forgot-password/src","projectType":"library","tags":["scope:auth","type:feature"],"targets":{"lint":{"executor":"@nx/eslint:lint","options":{"lintFilePatterns":["libs/auth/feature-forgot-password/**/*.{ts,tsx}"]}}}}

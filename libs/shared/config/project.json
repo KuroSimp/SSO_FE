@@ -1,0 +1,1 @@
+{"name":"shared-config","sourceRoot":"libs/shared/config/src","projectType":"library","tags":["scope:shared","type:config"],"targets":{"test":{"executor":"nx:run-commands","options":{"command":"vitest run libs/shared/config --passWithNoTests"}},"lint":{"executor":"@nx/eslint:lint","options":{"lintFilePatterns":["libs/shared/config/**/*.{ts,tsx}"]}}}}

@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@sso/auth-domain": ["libs/auth/domain/src/index.ts"],
+      "@sso/auth-application": ["libs/auth/application/src/index.ts"],
+      "@sso/auth-infrastructure": ["libs/auth/infrastructure/src/index.ts"],
+      "@sso/auth-feature-login": ["libs/auth/feature-login/src/index.ts"],
+      "@sso/auth-feature-forgot-password": ["libs/auth/feature-forgot-password/src/index.ts"],
+      "@sso/auth-feature-session": ["libs/auth/feature-session/src/index.ts"],
+      "@sso/auth-feature-dashboard": ["libs/auth/feature-dashboard/src/index.ts"],
+      "@sso/shared-ui": ["libs/shared/ui/src/index.ts"],
+      "@sso/shared-utils": ["libs/shared/utils/src/index.ts"],
+      "@sso/shared-config": ["libs/shared/config/src/index.ts"],
+      "@sso/shared-hooks": ["libs/shared/hooks/src/index.ts"],
+      "@sso/core-routing": ["libs/core/routing/src/index.ts"]
+    }
+  },
+  "include": ["apps/**/*.ts", "apps/**/*.tsx", "libs/**/*.ts", "libs/**/*.tsx"]
+}
